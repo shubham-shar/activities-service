@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
+
+        <title>Movies</title>
+    </head>
+    <body class="p-3 mb-2 bg-light text-black">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Movies</h1>
+            </div>
+        </div>
+        <div class="container justify-content-start w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
+            <div class="table-responsive">
+                <table class="table table-borderless table-hover">
+                    <thead>
+                    <tr>
+                        <th style="width: 20%" scope="col">#</th>
+                        <th style="width: 80%" scope="col">Title</th>
+                    </tr>
+
+                    </thead>
+                    <tbody>
+                    <tr th:each="movie,iter : ${movies}">
+                        <th scope="col">
+                            <a th:href="@{/movies/{id}(id = ${movie.id})}" th:text="${iter.index + 1}"></a>
+                        </th>
+                        <td>
+                            <a th:href="@{/movies/{id}(id = ${movie.id})}" th:text="${movie.title}"></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <script th:src="@{/js/jquery-slim.min.js}"></script>
+        <script th:src="@{/js/popper.min.js}"></script>
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+    </body>
+</html>

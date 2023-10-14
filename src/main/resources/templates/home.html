@@ -9,14 +9,32 @@
         <title>Home</title>
     </head>
     <body class="p-3 mb-2 bg-light text-black">
-        <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
-            <a th:href="@{/movies}">
-                <button type="submit" class="btn btn-dark mb-2">Movies</button>
-            </a>
-            <br>
-            <a th:href="@{/events}">
-                <button type="submit" class="btn btn-dark">Events</button>
-            </a>
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h1 class="display-4">Activities</h1>
+            </div>
         </div>
+        <div class="container justify-content-center w-25 p-3" style="margin-top: 5em;">
+            <div class="row gx-5">
+                <div class="col">
+                    <div class="p-3">
+                        <a th:href="@{/events}">
+                            <button class="btn btn-dark">Events</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-3">
+                        <a th:href="@{/movies}">
+                            <button class="btn btn-dark">Movies</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script th:src="@{/js/jquery-slim.min.js}"></script>
+        <script th:src="@{/js/popper.min.js}"></script>
+        <script th:src="@{/js/bootstrap.min.js}"></script>
     </body>
 </html>
