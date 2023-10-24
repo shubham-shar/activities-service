@@ -1,0 +1,9 @@
+movie-service:
+    url: "http://localhost:8094/movie-service"
+    moviesPath: "/fetch-all-movies"
+    movieByIdPath: "/fetch-movie-by-id"
+
+event-service:
+    url: "http://localhost:8095/event-service"
+    eventsPath: "/events"
+    eventByIdPath: "/events"

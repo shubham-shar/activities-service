@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.net.URISyntaxException;
+
 @Controller
 public class HomeController {
 
@@ -23,25 +25,25 @@ public class HomeController {
     }
 
     @GetMapping("/movies")
-    public String renderMoviesPage(Model model) {
+    public String renderMoviesPage(Model model) throws URISyntaxException {
         model.addAttribute("movies", movieService.getMovies());
         return "movies.html";
     }
 
     @GetMapping("/events")
-    public String renderEventsPage(Model model) {
+    public String renderEventsPage(Model model) throws URISyntaxException {
         model.addAttribute("events", eventService.getEvents());
         return "events.html";
     }
 
     @GetMapping("/movies/{id}")
-    public String renderMoviesPage(@PathVariable Long id, Model model) {
+    public String renderMoviesPage(@PathVariable Long id, Model model) throws URISyntaxException {
         model.addAttribute("movie", movieService.getMovie(id));
         return "movie.html";
     }
 
     @GetMapping("/events/{id}")
-    public String renderEventsPage(@PathVariable Long id, Model model) {
+    public String renderEventsPage(@PathVariable Long id, Model model) throws URISyntaxException {
         model.addAttribute("event", eventService.getEvent(id));
         return "event.html";
     }
