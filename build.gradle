@@ -17,6 +17,12 @@ configurations {
 	}
 }
 
+jar {
+	manifest {
+		attributes 'Main-Class': 'com.activities.bits'
+	}
+}
+
 repositories {
 	mavenCentral()
 }
